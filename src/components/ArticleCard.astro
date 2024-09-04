@@ -1,0 +1,9 @@
+---
+const { article } = Astro.props;
+
+console.log()
+---
+<a href={"/article/" + article.frontmatter.path} class="rounded-lg shadow hover:shadow-xl transition-shadow p-3 border">
+    <h1>{article.frontmatter.title}</h1>
+    <span>By: {article.frontmatter.author}</span>
+</a>

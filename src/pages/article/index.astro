@@ -1,0 +1,12 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import Article from "../../components/ArticleCard.astro"
+const articles = await Astro.glob('../../content/articles/*.md')
+---
+
+<SiteLayout>
+    <h1 class="text-4xl">Articles</h1>
+    <div class="grid grid-cols-2 md:grid-cols-3 grid-flow-row auto-rows-max gap-8 mt-3">
+        {articles.map(article => (<Article article={article}></Article>))}
+    </div>
+</SiteLayout>
